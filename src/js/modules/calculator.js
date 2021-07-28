@@ -26,11 +26,11 @@ class Calculator {
 	addToCalculation = (value) => {
 		if (this.operator === null) {
 	 		this.setFirstNumber(value);
-			display.addToTheScreen(value);	 		
+			display.addToTheScreen(this.firstNumber);	 		
 	 		return;
 	 	} 
 	 	this.setSecondNumber(value);
-	 	display.addToTheScreen(value);
+	 	display.addToTheScreen(this.secondNumber);
 	}	
 
 	afterEvaluationReset = (total) => {
@@ -50,22 +50,22 @@ class Calculator {
 		if (this.secondNumber.length < 1) return;
 		let total;
 
-		const firstNrToInt = parseInt(this.firstNumber);
-		const secondNrToInt = parseInt(this.secondNumber);
+		const firstNrToFloat = parseFloat(this.firstNumber);
+		const secondNrToFloat = parseFloat(this.secondNumber);
 
 		switch (this.operator) {
 			case '+':
-				total = firstNrToInt + secondNrToInt;
+				total = firstNrToFloat + secondNrToFloat;
 				break;
 			case '-':
-				total = firstNrToInt - secondNrToInt;
+				total = firstNrToFloat - secondNrToFloat;
 				break
 			case '/':
-				total = firstNrToInt / secondNrToInt;
+				total = firstNrToFloat / secondNrToFloat;
 				if (total === Infinity) total = ''
 				break;
 			case '*':
-				total = firstNrToInt * secondNrToInt;
+				total = firstNrToFloat * secondNrToFloat;
 				break;
 		}
 		

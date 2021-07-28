@@ -38,7 +38,7 @@ body {
 
 .calculator .screen {
 	display: flex;
-	height: 100px;
+	min-height: 100px;
 	background-color: var(--secondary-color);
 	align-items: center;
 	justify-content: flex-end;
@@ -48,6 +48,7 @@ body {
 	color: white;
 	font-size: 3rem;
 	padding-right: 2rem;
+	word-break: break-word;
 }
 
 .calculator .buttons {
@@ -139,4 +140,16 @@ body {
 
 .nine {
 	grid-area: 2/3/2/3;
+}
+
+@media (max-width: 375px) {
+	.calculator {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.calculator .buttons {
+		margin-top: 2rem;
+	}
 }
